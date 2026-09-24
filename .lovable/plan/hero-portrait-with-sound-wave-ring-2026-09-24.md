@@ -1,6 +1,7 @@
 # Hero: portrait with sound-wave ring
 
 ## What changes
+
 - Remove the faded background photo from the top of the page. Keep the subtle network grid and dark overlay so it doesn't look empty.
 - Put the uploaded photo of Hari on the right side of the top section, cropped into a circle.
 - Around the circle, add animated "music sound wave" effects:
@@ -12,6 +13,7 @@
 - If a visitor has reduced motion turned on, the waves stay still.
 
 ## Technical details
+
 - Upload `user-uploads://hari.jpg` to Lovable Assets and import it with `src/assets/hari-portrait.jpg.asset.json`.
 - In `src/routes/index.tsx`, remove the banner `<img>` in the hero and change it to a 2-column grid (`lg:grid-cols-[1.1fr_0.9fr]`). Add a `PortraitWaves` component: a circular image with about 48 absolutely positioned bars rotated around the circle (`rotate(i*7.5deg) translateY(-radius)`). Each bar uses an `eq-bar` scaleY keyframe animation with staggered delays and durations, and there are ripple rings that use a scale and opacity keyframe.
 - Add the `eq-bar` and `ripple` keyframes and utilities to `src/styles.css`, using only the primary color token.
