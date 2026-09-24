@@ -123,6 +123,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "bJhTrHdL2ItXHFgK8r4JJVHOatYFgO9KPPMY3OStb3s" },
       { title: "Hari Prasanth S | Network Engineer | Network Support | NOC | CCNA | Linux" },
       { name: "description", content: "Hari Prasanth S is an AI & Data Science graduate with skills in Network Engineering, Network Support, NOC, CCNA, Linux, Cloud Computing, AWS, Azure, and IT Infrastructure." },
       { name: "author", content: "Hari Prasanth S" },
