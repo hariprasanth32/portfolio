@@ -160,11 +160,22 @@
 }
 
 @utility hero-overlay {
-  background: linear-gradient(90deg, var(--background) 7%, color-mix(in oklab, var(--background) 94%, transparent) 42%, color-mix(in oklab, var(--background) 28%, transparent) 100%);
+  background: linear-gradient(
+    90deg,
+    var(--background) 7%,
+    color-mix(in oklab, var(--background) 94%, transparent) 42%,
+    color-mix(in oklab, var(--background) 28%, transparent) 100%
+  );
 }
 
 @utility network-grid {
-  background-image: linear-gradient(color-mix(in oklab, var(--primary) 12%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklab, var(--primary) 12%, transparent) 1px, transparent 1px);
+  background-image:
+    linear-gradient(color-mix(in oklab, var(--primary) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--primary) 12%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 56px 56px;
   mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
 }
@@ -189,7 +200,9 @@
 @utility nav-link {
   color: var(--muted-foreground);
   transition: color 180ms ease;
-  &:hover { color: var(--primary); }
+  &:hover {
+    color: var(--primary);
+  }
 }
 
 @utility status-dot {
@@ -204,39 +217,123 @@
 @utility project-card {
   min-height: 440px;
   transition: background-color 350ms ease;
-  &:hover { background-color: var(--surface); }
+  &:hover {
+    background-color: var(--surface);
+  }
 }
 
 @utility marquee-track {
   animation: marquee 28s linear infinite;
 }
 
-@keyframes signal { 70% { box-shadow: 0 0 0 10px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
-@keyframes marquee { to { transform: translateX(-50%); } }
-@keyframes fade-in { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes float-y { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-8px) rotate(6deg); } }
-@keyframes spin-slow { to { transform: rotate(360deg); } }
-@keyframes pop { 0% { transform: scale(0) rotate(-90deg); } 70% { transform: scale(1.2); } 100% { transform: scale(1) rotate(0); } }
-@keyframes word-up { from { opacity: 0; transform: translateY(110%) rotate(4deg); } to { opacity: 1; transform: translateY(0) rotate(0); } }
-@keyframes shimmer { to { background-position: 200% center; } }
+@keyframes signal {
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-8px) rotate(6deg);
+  }
+}
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pop {
+  0% {
+    transform: scale(0) rotate(-90deg);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+@keyframes word-up {
+  from {
+    opacity: 0;
+    transform: translateY(110%) rotate(4deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+@keyframes shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
 
-.icon-float { animation: float-y 3.5s ease-in-out infinite; }
-.icon-float-delay { animation: float-y 3.5s ease-in-out 1.2s infinite; }
-.icon-spin { animation: spin-slow 12s linear infinite; }
-.icon-pop { animation: pop 600ms cubic-bezier(.2,.9,.3,1.3) both; }
+.icon-float {
+  animation: float-y 3.5s ease-in-out infinite;
+}
+.icon-float-delay {
+  animation: float-y 3.5s ease-in-out 1.2s infinite;
+}
+.icon-spin {
+  animation: spin-slow 12s linear infinite;
+}
+.icon-pop {
+  animation: pop 600ms cubic-bezier(0.2, 0.9, 0.3, 1.3) both;
+}
 
-.split-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: 0.08em; }
-.split-word > span { display: inline-block; animation: word-up 800ms cubic-bezier(.2,.8,.2,1) both; }
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.08em;
+}
+.split-word > span {
+  display: inline-block;
+  animation: word-up 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
 
 .text-shimmer {
   background: linear-gradient(90deg, var(--primary), var(--foreground), var(--primary));
   background-size: 200% auto;
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   animation: shimmer 4s linear infinite;
 }
 
-.reveal { opacity: 0; transform: translateY(40px); transition: opacity 900ms ease, transform 900ms cubic-bezier(.2,.8,.2,1); }
-.reveal.is-visible { opacity: 1; transform: none; }
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 900ms ease,
+    transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
 
 .contact-card {
   border: 1px solid var(--ink-border);
@@ -244,26 +341,91 @@
   padding: 2rem;
   backdrop-filter: blur(12px);
 }
-@media (min-width: 640px) { .contact-card { padding: 2.75rem; } }
+@media (min-width: 640px) {
+  .contact-card {
+    padding: 2.75rem;
+  }
+}
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 @media (max-width: 767px) {
-  .hero-overlay { background: linear-gradient(0deg, var(--background) 18%, color-mix(in oklab, var(--background) 72%, transparent) 70%, color-mix(in oklab, var(--background) 45%, transparent)); }
+  .hero-overlay {
+    background: linear-gradient(
+      0deg,
+      var(--background) 18%,
+      color-mix(in oklab, var(--background) 72%, transparent) 70%,
+      color-mix(in oklab, var(--background) 45%, transparent)
+    );
+  }
 }
 
-.eq-holder { position: absolute; inset: 0; display: flex; justify-content: center; pointer-events: none; }
-.eq-bar { display: block; width: 4px; height: 13%; margin-top: 2%; border-radius: 9999px; background: var(--primary); transform-origin: bottom; animation: eq-bar 900ms ease-in-out infinite alternate; opacity: .85; }
-.wave-ripple { position: absolute; inset: 16%; border-radius: 9999px; border: 2px solid var(--primary); animation: ripple 3.3s ease-out infinite; }
-@keyframes eq-bar { from { transform: scaleY(0.2); } to { transform: scaleY(1); } }
-@keyframes ripple { from { transform: scale(1); opacity: .6; } to { transform: scale(1.6); opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .eq-bar, .wave-ripple { animation: none !important; } }
+.eq-holder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+.eq-bar {
+  display: block;
+  width: 4px;
+  height: 13%;
+  margin-top: 2%;
+  border-radius: 9999px;
+  background: var(--primary);
+  transform-origin: bottom;
+  animation: eq-bar 900ms ease-in-out infinite alternate;
+  opacity: 0.85;
+}
+.wave-ripple {
+  position: absolute;
+  inset: 16%;
+  border-radius: 9999px;
+  border: 2px solid var(--primary);
+  animation: ripple 3.3s ease-out infinite;
+}
+@keyframes eq-bar {
+  from {
+    transform: scaleY(0.2);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes ripple {
+  from {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .eq-bar,
+  .wave-ripple {
+    animation: none !important;
+  }
+}
 .text-shimmer .split-word > span {
   background: linear-gradient(90deg, var(--primary), var(--foreground), var(--primary));
   background-size: 200% auto;
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-  animation: word-up 800ms cubic-bezier(.2,.8,.2,1) both, shimmer 4s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation:
+    word-up 800ms cubic-bezier(0.2, 0.8, 0.2, 1) both,
+    shimmer 4s linear infinite;
 }

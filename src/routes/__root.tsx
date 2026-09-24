@@ -79,17 +79,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Hari Prasanth S — Network Engineer" },
-      { name: "description", content: "Portfolio of Hari Prasanth S, a network engineer and systems specialist focused on secure, reliable infrastructure." },
+      {
+        name: "description",
+        content:
+          "Portfolio of Hari Prasanth S, a network engineer and systems specialist focused on secure, reliable infrastructure.",
+      },
       { name: "author", content: "Hari Prasanth S" },
       { property: "og:title", content: "Hari Prasanth S — Network Engineer" },
-      { property: "og:description", content: "Networks that stay connected, secure, and ready to scale." },
+      {
+        property: "og:description",
+        content: "Networks that stay connected, secure, and ready to scale.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
