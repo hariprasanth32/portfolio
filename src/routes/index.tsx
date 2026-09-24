@@ -29,10 +29,10 @@ import resume from "@/assets/hari-prasanth-resume.pdf.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Hari Prasanth S — Network Engineer" },
-      { name: "description", content: "Portfolio of Hari Prasanth S, a network engineer and systems specialist focused on secure, reliable infrastructure." },
-      { property: "og:title", content: "Hari Prasanth S — Network Engineer" },
-      { property: "og:description", content: "Networks that stay connected, secure, and ready to scale." },
+      { title: "Hari Prasanth S | Network Engineer | Network Support | NOC | CCNA | Linux" },
+      { name: "description", content: "Hari Prasanth S is an AI & Data Science graduate with skills in Network Engineering, Network Support, NOC, CCNA, Linux, Cloud Computing, AWS, Azure, and IT Infrastructure." },
+      { property: "og:title", content: "Hari Prasanth S | Network Engineer | Network Support | NOC | CCNA | Linux" },
+      { property: "og:description", content: "Hari Prasanth S is an AI & Data Science graduate with skills in Network Engineering, Network Support, NOC, CCNA, Linux, Cloud Computing, AWS, Azure, and IT Infrastructure." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

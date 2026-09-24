@@ -73,28 +73,89 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const SITE_URL = "https://hariprasanth32.vercel.app";
+
+const jsonLd = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "hariprasanth32",
+    "url": SITE_URL,
+    "description": "Personal portfolio website of Hari Prasanth S — Network Engineer, NOC, CCNA, Linux, Cloud Computing.",
+    "author": {
+      "@type": "Person",
+      "name": "Hari Prasanth S",
+      "url": SITE_URL,
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hari Prasanth S",
+    "jobTitle": "Network Engineer",
+    "url": SITE_URL,
+    "image": `${SITE_URL}/hariprasanth.jpg`,
+    "sameAs": [
+      "https://github.com/hariprasanth32",
+      "https://www.linkedin.com/in/hariprasanth32",
+    ],
+    "knowsAbout": [
+      "Network Engineering",
+      "Network Support",
+      "NOC",
+      "CCNA",
+      "Linux",
+      "Cloud Computing",
+      "AWS",
+      "Azure",
+      "IT Infrastructure",
+      "AI & Data Science",
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "AI & Data Science Program",
+    },
+  },
+]);
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Hari Prasanth S — Network Engineer" },
-      { name: "description", content: "Portfolio of Hari Prasanth S, a network engineer and systems specialist focused on secure, reliable infrastructure." },
+      { title: "Hari Prasanth S | Network Engineer | Network Support | NOC | CCNA | Linux" },
+      { name: "description", content: "Hari Prasanth S is an AI & Data Science graduate with skills in Network Engineering, Network Support, NOC, CCNA, Linux, Cloud Computing, AWS, Azure, and IT Infrastructure." },
       { name: "author", content: "Hari Prasanth S" },
-      { property: "og:title", content: "Hari Prasanth S — Network Engineer" },
-      { property: "og:description", content: "Networks that stay connected, secure, and ready to scale." },
+      { name: "robots", content: "index, follow" },
+      { name: "keywords", content: "Hari Prasanth S, hariprasanth32, Network Engineer, Network Support, NOC, CCNA, Linux, Cloud Computing, AWS, Azure, IT Infrastructure, AI Data Science" },
+      // Open Graph
       { property: "og:type", content: "website" },
+      { property: "og:url", content: SITE_URL },
+      { property: "og:title", content: "Hari Prasanth S | Network Engineer | Network Support | NOC | CCNA | Linux" },
+      { property: "og:description", content: "Hari Prasanth S is an AI & Data Science graduate with skills in Network Engineering, Network Support, NOC, CCNA, Linux, Cloud Computing, AWS, Azure, and IT Infrastructure." },
+      { property: "og:image", content: `${SITE_URL}/hariprasanth.jpg` },
+      { property: "og:site_name", content: "hariprasanth32" },
+      { property: "og:locale", content: "en_US" },
+      // Twitter Card
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Hari Prasanth S | Network Engineer | NOC | CCNA | Linux" },
+      { name: "twitter:description", content: "Hari Prasanth S is an AI & Data Science graduate with skills in Network Engineering, Network Support, NOC, CCNA, Linux, Cloud Computing, AWS, and Azure." },
+      { name: "twitter:image", content: `${SITE_URL}/hariprasanth.jpg` },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" },
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/hariprasanth.jpg", type: "image/jpeg" },
+      { rel: "canonical", href: SITE_URL },
+      { rel: "sitemap", type: "application/xml", href: `${SITE_URL}/sitemap.xml` },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: jsonLd,
+      },
     ],
   }),
   shellComponent: RootShell,
